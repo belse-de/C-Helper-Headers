@@ -1,5 +1,3 @@
-
-#include "belse/std_c.h"
 #include "belse/dbg.h"
 
 #define BELSE_TRY_CATCH_VERSION 3
@@ -48,5 +46,8 @@ rest:
   } ENDTRY;
   
   log_debug("Test exit: %d", __COUNTER__);
+  
+  printf("Good Bye.\n");
+  
   exit(EXIT_SUCCESS);
 }
