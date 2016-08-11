@@ -23,6 +23,7 @@ test:
 rest:
   log_debug("Test rest: %d", __COUNTER__);
   
+  // test finally
   TRY{
     log_debug("Test try_finaly try: %d", __COUNTER__);
     THROW( 1 );
@@ -31,10 +32,25 @@ rest:
     log_debug("Test try_finaly catch: %d", __COUNTER__);
   } CATCH( 2 ){
     assert(false);
+  } CATCH_UNKNOWN {
+    assert(false);
+  } FINALLY {
+    log_debug("Test try_finaly finaly: %d", __COUNTER__);
+  } ENTRY;
+  
+  TRY{
+    log_debug("Test try_finaly try: %d", __COUNTER__);
+  } CATCH( 1 ){
+    assert(false);
+  } CATCH( 2 ){
+    assert(false);
+  } CATCH_UNKNOWN {
+    assert(false);
   } FINALLY {
     log_debug("Test try_finaly finaly: %d", __COUNTER__);
   } ENTRY;
 
+  // test catch
   TRY{
     log_debug("Test try_catch try: %d", __COUNTER__);
     THROW( 2 );
@@ -43,6 +59,20 @@ rest:
     assert(false);
   } CATCH( 2 ){
     log_debug("Test try_catch catch: %d", __COUNTER__);
+  } CATCH_UNKNOWN {
+    log_err("Test try_catch SHOULD NOT HAPPEN!");
+    assert(false);
+  } ENDTRY;
+  
+  // test catch unknown
+  TRY{
+    log_debug("Test try_catch_unknown try: %d", __COUNTER__);
+    THROW( 2 );
+    assert(false);
+  } CATCH( 1 ){
+    assert(false);
+  } CATCH_UNKNOWN {
+    log_debug("Test try_catch catch_unknown: %d", __COUNTER__);
   } ENDTRY;
   
   log_debug("Test exit: %d", __COUNTER__);

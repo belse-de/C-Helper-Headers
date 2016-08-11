@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 #include <errno.h>
-#include <string.h>
-
 
 #define __FUNC__    __func__
 
