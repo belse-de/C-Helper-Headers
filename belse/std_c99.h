@@ -2,8 +2,6 @@
 #ifndef BELSE_STD_C99_H_
 #define BELSE_STD_C99_H_
 
-#include "std_c95.h"
-
 #include <complex.h>  // Complex number arithmetic
 #include <fenv.h>     // Floating-point environment
 #include <inttypes.h> // Format conversion of integer types

@@ -1,8 +1,11 @@
+#!/usr/bin/tcc -run -Wall -Werror -g -b -I/usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include/
 
+// tcc Currently missing items are: complex and imaginary numbers and variable length arrays. 
+#include "belse/tcc.h"
+#include "belse/std_c.h"
 #include "belse/dbg.h"
-
-#define BELSE_TRY_CATCH_VERSION 3
 #include "belse/try_catch.h"
+
 
 int main(void)
 {

@@ -2,8 +2,6 @@
 #ifndef BELSE_STD_C11_H_
 #define BELSE_STD_C11_H_
 
-#include "std_c99.h"
-
 #include <stdalign.h>    // alignas and alignof convenience macros
 #ifndef  __STDC_NO_ATOMICS__
 #  include <stdatomic.h>   // Atomic types
