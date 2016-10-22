@@ -4,6 +4,20 @@
 #include <stdint.h>
 #include <limits.h>
 
+#if(__STDC_VERSION >= 201112L)
+#  define rotl(X,s) _Generic((X), \
+                    uint8_t:  rotl8,  \
+                    uint16_t: rotl16, \
+                    uint32_t: rotl32  \
+   )(X,s)
+
+#  define rotr(X,s) _Generic((X), \
+                    uint8_t:  rotr8,  \
+                    uint16_t: rotr16, \
+                    uint32_t: rotr32  \
+   )(X,s)
+#endif
+
 inline uint8_t rotl8(uint8_t value, int shift)
 {
     unsigned int u_shift = (sizeof(value)*CHAR_BIT) + (shift%(sizeof(value)*8));
