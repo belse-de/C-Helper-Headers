@@ -1,7 +1,12 @@
 #ifndef BELSE_DBG_H_
 #define BELSE_DBG_H_
 
-// based on the book: http://c.learncodethehardway.org/
+// based on the book: Learn C the hard way
+// orignal url:       http://c.learncodethehardway.org/
+// new url:           https://learncodethehardway.org/c/
+
+// exercises:         https://github.com/zedshaw/learn-c-the-hard-way-lectures
+// exercise results:  https://github.com/zedshaw/liblcthw
 
 #include <stdio.h>
 #include <errno.h>
