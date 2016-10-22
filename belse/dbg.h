@@ -1,6 +1,8 @@
 #ifndef BELSE_DBG_H_
 #define BELSE_DBG_H_
 
+// based on the book: http://c.learncodethehardway.org/
+
 #include <stdio.h>
 #include <errno.h>
 
